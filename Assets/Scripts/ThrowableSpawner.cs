@@ -9,6 +9,9 @@ public class ThrowableSpawner : MonoBehaviour
     public GameObject self;
     public void OnTriggerEnter(Collider other)
     {
-        Instantiate(tomato, self.transform);
+        if (other.tag == "tomato" || other.tag == "banana")
+        {
+            Instantiate(tomato, self.transform.position - new Vector3(0, 0.25f, 0), transform.rotation);
+        }
     }
 }

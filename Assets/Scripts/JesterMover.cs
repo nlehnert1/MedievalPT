@@ -14,6 +14,8 @@ public class JesterMover : MonoBehaviour
     Material material;
     bool fadingIn;
     bool fadingOut;
+    AudioSource audio;
+    public AudioClip splatSound;
 
     private void Start()
     {
@@ -22,6 +24,8 @@ public class JesterMover : MonoBehaviour
         fadingOut = false;
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
         material = meshRenderer.material;
+        audio = GetComponent<AudioSource>();
+
     }
 
 
@@ -32,7 +36,7 @@ public class JesterMover : MonoBehaviour
         {
 
             //TODO: Spawn food particles
-
+            audio.PlayOneShot(splatSound);
             StartCoroutine(TeleportToNewLocation());
             Destroy(other.gameObject);
         }
