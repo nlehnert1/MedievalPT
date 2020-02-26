@@ -5,6 +5,8 @@ using UnityEngine;
 public class CollisionHandler : MonoBehaviour
 {
 
+    public bool hasBeenDuplicated = false;
+
     public void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Touched collision handler");

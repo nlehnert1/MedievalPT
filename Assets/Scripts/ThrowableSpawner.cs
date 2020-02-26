@@ -9,9 +9,15 @@ public class ThrowableSpawner : MonoBehaviour
     public GameObject self;
     public void OnTriggerEnter(Collider other)
     {
+        
         if (other.tag == "tomato" || other.tag == "banana")
         {
-            Instantiate(tomato, self.transform.position - new Vector3(0, 0.25f, 0), transform.rotation);
+            bool hasBeenDuplicated = other.gameObject.GetComponentInChildren<CollisionHandler>().hasBeenDuplicated;
+            if (!hasBeenDuplicated)
+            {
+                other.gameObject.GetComponentInChildren<CollisionHandler>().hasBeenDuplicated = true;
+                Instantiate(tomato, self.transform.position - new Vector3(0, 0.25f, 0), transform.rotation);
+            }
         }
     }
 }
