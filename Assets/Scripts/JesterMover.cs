@@ -12,10 +12,7 @@ public class JesterMover : MonoBehaviour
     private Transform GOTransform;
     private bool findingNewLocation;
     MeshRenderer meshRenderer;
-    MeshRenderer childRenderer;
     Material material;
-    Material childMaterial;
-    bool isParent;
     bool fadingIn;
     bool fadingOut;
 
@@ -30,7 +27,7 @@ public class JesterMover : MonoBehaviour
     }
 
 
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collider other)
     {
         Debug.Log("Touched OnTriggerEnter");
         if(other.gameObject.tag.Equals("tomato") || other.gameObject.tag.Equals("banana"))
