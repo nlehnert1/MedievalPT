@@ -6,23 +6,18 @@ using System;
 public class JesterMover : MonoBehaviour
 {
 
-    float zMax = 20.0f, xMax = 10.0f;
+    float zMax = 8.0f, xMax = 8.0f;
     float zOffset = 10f, xOffset = -5f;
     private System.Random random;
     private Transform GOTransform;
-    private bool findingNewLocation;
     MeshRenderer meshRenderer;
-    MeshRenderer childRenderer;
     Material material;
-    Material childMaterial;
-    bool isParent;
     bool fadingIn;
     bool fadingOut;
 
     private void Start()
     {
         random = new System.Random();
-        findingNewLocation = false;
         fadingIn = false;
         fadingOut = false;
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
@@ -30,7 +25,7 @@ public class JesterMover : MonoBehaviour
     }
 
 
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
         Debug.Log("Touched OnTriggerEnter");
         if(other.gameObject.tag.Equals("tomato") || other.gameObject.tag.Equals("banana"))
@@ -75,8 +70,8 @@ public class JesterMover : MonoBehaviour
     {
         Debug.Log("Finding new location");
         Vector3 newTransform = new Vector3();
-        yield return new WaitForSeconds(1.5f);
-        StartCoroutine(FadeTo(material, 1, 0, 1.0f));            
+        yield return new WaitForSeconds(1.0f);
+        //StartCoroutine(FadeTo(material, 1, 0, 1.0f));            
         while (fadingOut)
         {
             yield return null;
@@ -84,16 +79,15 @@ public class JesterMover : MonoBehaviour
 
             float newX = float.Parse(random.NextDouble().ToString());
             float newZ = float.Parse(random.NextDouble().ToString());
-            newTransform = new Vector3(newX * xMax - xOffset, transform.position.y, newZ * xMax - xOffset);
+            newTransform = new Vector3(newX * xMax - xOffset, transform.position.y, newZ * zMax - zOffset);
             transform.position = newTransform;
 
 
-        StartCoroutine(FadeTo(material, 0, 1, 1.0f));
+        //StartCoroutine(FadeTo(material, 0, 1, 1.0f));
         while (fadingIn)
         {
             yield return null;
         }
         yield return new WaitForSeconds(1.5f);
-        findingNewLocation = false;
     }
 }
