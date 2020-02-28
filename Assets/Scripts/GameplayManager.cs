@@ -11,7 +11,9 @@ public class GameplayManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(BananaPedestal);
+        BananaPedestal.SetActive(true);
+        TomatoPedestal.SetActive(true);
+        //Instantiate(BananaPedestal);
         //Instantiate(TomatoPedestal);
     }
 
@@ -20,14 +22,18 @@ public class GameplayManager : MonoBehaviour
     {
         if(Jester.GetComponent<JesterMover>().hitByBanana)
         {
-            Instantiate(TomatoPedestal);
-            Destroy(BananaPedestal);
+            //Instantiate(TomatoPedestal);
+            TomatoPedestal.SetActive(true);
+            //Destroy(BananaPedestal);
+            BananaPedestal.SetActive(false);
             Jester.GetComponent<JesterMover>().hitByBanana = false;
         }
         if(Jester.GetComponent<JesterMover>().hitByTomato)
         {
-            Instantiate(BananaPedestal);
-            Destroy(TomatoPedestal);
+            //Instantiate(BananaPedestal);
+            BananaPedestal.SetActive(true);
+            //Destroy(TomatoPedestal);
+            TomatoPedestal.SetActive(false);
             Jester.GetComponent<JesterMover>().hitByTomato = false;
         }
     }
