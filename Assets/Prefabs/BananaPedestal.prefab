@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701309d116f68964bb1cc23b10d0470c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tomato: {fileID: 0}
+  tomato: {fileID: 3997413212659700868}
   self: {fileID: 7876748116014935496}
 --- !u!1001 &5257561164859001964
 PrefabInstance:
@@ -384,6 +384,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28b703cc4dabb974a9ee7164598c24f2, type: 3}
+--- !u!1 &3997413212659700868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5711832683170713435, guid: 28b703cc4dabb974a9ee7164598c24f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8664129307302665183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &81896005538031255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8727932410899840328, guid: 28b703cc4dabb974a9ee7164598c24f2,

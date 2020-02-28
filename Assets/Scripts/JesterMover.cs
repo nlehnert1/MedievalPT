@@ -16,6 +16,8 @@ public class JesterMover : MonoBehaviour
     bool fadingOut;
     AudioSource audio;
     public AudioClip splatSound;
+    public bool hitByBanana;
+    public bool hitByTomato;
 
     private void Start()
     {
@@ -32,9 +34,10 @@ public class JesterMover : MonoBehaviour
     public void OnCollisionEnter(Collision other)
     {
         Debug.Log("Touched OnTriggerEnter");
-        if(other.gameObject.tag.Equals("tomato") || other.gameObject.tag.Equals("banana"))
+        hitByTomato = other.gameObject.tag.Equals("tomato");
+        hitByBanana = other.gameObject.tag.Equals("banana");
+        if (hitByTomato || hitByBanana)
         {
-
             //TODO: Spawn food particles
             audio.PlayOneShot(splatSound);
             StartCoroutine(TeleportToNewLocation());
