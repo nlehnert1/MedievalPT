@@ -20,7 +20,10 @@ public class ThrowableGrabber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(interactable.attachedToHand.handType);
+        if (interactable.attachedToHand)
+        {
+            Debug.Log(interactable.attachedToHand.handType);
+        }
         //if(interactable.attachedToHand.handType == )
     }
 }
