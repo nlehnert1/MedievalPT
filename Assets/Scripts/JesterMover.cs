@@ -6,8 +6,8 @@ using System;
 public class JesterMover : MonoBehaviour
 {
 
-    float zMax = 8.0f, xMax = 8.0f;
-    float zOffset = 10f, xOffset = -5f;
+    float zMax = 10.0f, xMax = 3.0f;
+    float zOffset = 5, xOffset = 2;
     private System.Random random;
     private Transform GOTransform;
     MeshRenderer meshRenderer;
@@ -86,7 +86,7 @@ public class JesterMover : MonoBehaviour
 
             float newX = float.Parse(random.NextDouble().ToString());
             float newZ = float.Parse(random.NextDouble().ToString());
-            newTransform = new Vector3(newX * xMax - xOffset, transform.position.y, newZ * zMax - zOffset);
+            newTransform = new Vector3(newX * xMax + xOffset, transform.position.y, newZ * zMax - zOffset);
             transform.position = newTransform;
 
 

@@ -282,6 +282,8 @@ MonoBehaviour:
   BananaPedestal: {fileID: 3717102173916946917}
   TomatoPedestal: {fileID: 1680118179}
   Jester: {fileID: 1577224556}
+  tomato: {fileID: 4717963703599616650, guid: 21cf4bcae2dcc894c9952029bb09bb30, type: 3}
+  banana: {fileID: 5711832683170713435, guid: 28b703cc4dabb974a9ee7164598c24f2, type: 3}
 --- !u!4 &206013805
 Transform:
   m_ObjectHideFlags: 0
@@ -883,7 +885,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 1102f52aac99a584f8c57289f5dbded1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.96
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1102f52aac99a584f8c57289f5dbded1,
         type: 3}
@@ -893,7 +895,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 1102f52aac99a584f8c57289f5dbded1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.24
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1102f52aac99a584f8c57289f5dbded1,
         type: 3}

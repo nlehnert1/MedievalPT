@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 3627790150510764232}
   - component: {fileID: 3627790150510764239}
   - component: {fileID: 3627790150510764238}
+  - component: {fileID: 3327249116845382003}
   m_Layer: 0
   m_Name: tomato_01
   m_TagString: tomato
@@ -557,6 +558,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
+--- !u!114 &3327249116845382003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717963703599616650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aee6382c96988f45947c99a8d878a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4798948327845404911
 GameObject:
   m_ObjectHideFlags: 0
