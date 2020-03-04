@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 976200061137905526}
   - {fileID: 3511974314082127175}
-  - {fileID: 81896005538031255}
+  - {fileID: 8664129307302664840}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -107,8 +107,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.022886908, y: 0.0023220032, z: 0.0211723}
-  m_Center: {x: -0.00036886855, y: 0.0067280727, z: -0.0012224928}
+  m_Size: {x: 0.022886908, y: 0.0011087746, z: 0.0211723}
+  m_Center: {x: -0.00036886855, y: 0.006121458, z: -0.0012224928}
 --- !u!64 &6392721317351164271
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -354,7 +354,7 @@ PrefabInstance:
     - target: {fileID: 8727932410899840328, guid: 28b703cc4dabb974a9ee7164598c24f2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.658
+      value: 0.773
       objectReference: {fileID: 0}
     - target: {fileID: 8727932410899840328, guid: 28b703cc4dabb974a9ee7164598c24f2,
         type: 3}
@@ -403,7 +403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28b703cc4dabb974a9ee7164598c24f2, type: 3}
---- !u!4 &81896005538031255 stripped
+--- !u!4 &8664129307302664840 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8727932410899840328, guid: 28b703cc4dabb974a9ee7164598c24f2,
     type: 3}

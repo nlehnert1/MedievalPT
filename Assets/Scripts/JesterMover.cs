@@ -6,8 +6,8 @@ using System;
 public class JesterMover : MonoBehaviour
 {
 
-    float zMax = 10.0f, xMax = 3.0f;
-    float zOffset = 5, xOffset = 2;
+    public static float zMax = 10.0f, xMax = 3.0f;
+    public static float zOffset = 5, xOffset = 2;
     private System.Random random;
     private Transform GOTransform;
     MeshRenderer meshRenderer;
@@ -75,7 +75,7 @@ public class JesterMover : MonoBehaviour
 
     IEnumerator TeleportToNewLocation()
     {
-        Debug.Log("Finding new location");
+        Debug.Log("zmax: " + zMax + ", xmax: " + xMax + ", zOffset: " + zOffset + ", xOffset: " + xOffset);
         Vector3 newTransform = new Vector3();
         yield return new WaitForSeconds(1.0f);
         //StartCoroutine(FadeTo(material, 1, 0, 1.0f));            

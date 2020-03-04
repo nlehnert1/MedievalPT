@@ -9,9 +9,7 @@ public class ThrowableSpawner : MonoBehaviour
     public GameObject self;
     public void OnTriggerEnter(Collider other)
     {
-        GameObject[] tomatoes = GameObject.FindGameObjectsWithTag("tomato");
-        GameObject[] bananas = GameObject.FindGameObjectsWithTag("banana");
-        if ((other.tag == "tomato" && tomatoes.Length < 5) || (other.tag == "banana" && bananas.Length < 5))
+        if ((other.tag == "tomato") || (other.tag == "banana" ))
         {
             bool hasBeenDuplicated = other.gameObject.GetComponentInChildren<CollisionHandler>().hasBeenDuplicated;
             if (!hasBeenDuplicated)
