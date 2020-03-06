@@ -8,6 +8,8 @@ TagManager:
   - FxTemporaire
   - tomato
   - banana
+  - jester
+  - ui
   layers:
   - Default
   - TransparentFX

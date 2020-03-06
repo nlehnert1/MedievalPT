@@ -5,15 +5,18 @@ using UnityEngine;
 public class UIMaster : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static void ChangeDiffiulty(int maxDist) {
-        int newXOffset = 0;
-        int newZOffset = 7;
-        int newZMax = 0;
+    public JesterMover jester;
+
+    public void ChangeDiffiulty(int maxDist) {
+        //Debug.Log(maxDist);
+        float newXOffset = 0;
+        float newZOffset = 7;
+        float newZMax = 0;
         switch (maxDist) {
             case 0:
                 newZMax = 4;
-                newZOffset = 2;
-                newXOffset = 7;
+                newZOffset = 7;
+                newXOffset = 2;
                 break;
             case 1:
                 newZMax = 10;
@@ -22,16 +25,12 @@ public class UIMaster : MonoBehaviour
                 break;
             case 2:
                 newZMax = 14;
-                newZOffset = 7;
-                newXOffset = 2;
-                break;
-            default:
-                newZOffset = 0;
+                newZOffset = 2;
                 newXOffset = 7;
                 break;
         }
-        JesterMover.zMax = newZMax;
-        JesterMover.xOffset = newXOffset;
-        JesterMover.zOffset = newZOffset;
+        jester.zMax = newZMax;
+        jester.xOffset = newXOffset;
+        jester.zOffset = newZOffset;
     }
 }

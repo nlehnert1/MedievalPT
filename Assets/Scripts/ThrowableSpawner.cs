@@ -9,6 +9,11 @@ public class ThrowableSpawner : MonoBehaviour
     public GameObject self;
     public void OnTriggerEnter(Collider other)
     {
+        GameObject rulesUI = GameObject.FindGameObjectWithTag("ui");
+        if(rulesUI)
+        {
+            Destroy(rulesUI);
+        }
         if ((other.tag == "tomato") || (other.tag == "banana" ))
         {
             bool hasBeenDuplicated = other.gameObject.GetComponentInChildren<CollisionHandler>().hasBeenDuplicated;

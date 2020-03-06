@@ -5,9 +5,9 @@ using System;
 
 public class JesterMover : MonoBehaviour
 {
-
-    public static float zMax = 10.0f, xMax = 3.0f;
-    public static float zOffset = 5, xOffset = 2;
+    public int test;
+    public float zMax = 4.0f, xMax = 3.0f;
+    public float zOffset = 2, xOffset = 7;
     private System.Random random;
     private Transform GOTransform;
     MeshRenderer meshRenderer;

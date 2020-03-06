@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 4089403153424955704}
   - component: {fileID: 4089403153424955705}
   - component: {fileID: 4089403153424955706}
+  - component: {fileID: 6100561068367878275}
+  - component: {fileID: 9083126414809180927}
+  - component: {fileID: 6018995724820432613}
+  - component: {fileID: 4569330523662693689}
   m_Layer: 0
   m_Name: BananaPedestal
   m_TagString: Untagged
@@ -32,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 976200061137905526}
   - {fileID: 3511974314082127175}
-  - {fileID: 8664129307302664840}
+  - {fileID: 81896005538031255}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,6 +100,58 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &6100561068367878275
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4089403153424955707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.061069787, y: 0.20736623, z: 1}
+  m_Center: {x: 0.39529446, y: 0.6235069, z: 0}
+--- !u!65 &9083126414809180927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4089403153424955707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.91629946, y: 0.21634722, z: 0.027724624}
+  m_Center: {x: -0.041850388, y: 0.61850023, z: 0.39443338}
+--- !u!65 &6018995724820432613
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4089403153424955707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026198536, y: 0.20480227, z: 1}
+  m_Center: {x: -0.4307111, y: 0.6109761, z: 0}
+--- !u!65 &4569330523662693689
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4089403153424955707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.26609206, z: 0.029478282}
+  m_Center: {x: 0, y: 0.60123694, z: -0.38753575}
 --- !u!65 &7956850543904812879
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -403,7 +459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28b703cc4dabb974a9ee7164598c24f2, type: 3}
---- !u!4 &8664129307302664840 stripped
+--- !u!4 &81896005538031255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8727932410899840328, guid: 28b703cc4dabb974a9ee7164598c24f2,
     type: 3}
