@@ -7,6 +7,12 @@ public class LevelSwitch : MonoBehaviour
 {
     public int currLevel = 0;
 
+    public GameObject currPlayer;
+    /* public GameObject tomatoPlayer;
+    public GameObject wardrobePlayer;
+    public GameObject dummyPlayer;
+    public GameObject hubPlayer; */
+
     public string[] levelNames = new string[4] { "Hub", "TomatoThrowing", "RoyalWardrobe", "TrainingDummy"};
 
     static LevelSwitch s = null;
