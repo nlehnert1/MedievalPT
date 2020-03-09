@@ -10,8 +10,8 @@ public class JesterMover : MonoBehaviour
     public float zOffset = 2, xOffset = 7;
     private System.Random random;
     private Transform GOTransform;
-    MeshRenderer meshRenderer;
-    Material material;
+    MeshRenderer[] meshRenderers;
+    Material[] materials;
     bool fadingIn;
     bool fadingOut;
     AudioSource audio;
@@ -26,8 +26,14 @@ public class JesterMover : MonoBehaviour
         random = new System.Random();
         fadingIn = false;
         fadingOut = false;
-        meshRenderer = gameObject.GetComponent<MeshRenderer>();
-        material = meshRenderer.material;
+        meshRenderers = gameObject.GetComponentsInChildren<MeshRenderer>();
+        materials = new Material[meshRenderers.Length];
+        int i = 0;
+        foreach (MeshRenderer renderer in meshRenderers)
+        {
+            materials[i] = renderer.material;
+            i++;
+        }
         audio = GetComponent<AudioSource>();
         shouldBeHitByTomato = true;
         shouldBeHitByBanana = false;
@@ -85,7 +91,10 @@ public class JesterMover : MonoBehaviour
         Debug.Log("zmax: " + zMax + ", xmax: " + xMax + ", zOffset: " + zOffset + ", xOffset: " + xOffset);
         Vector3 newTransform = new Vector3();
         yield return new WaitForSeconds(1.0f);
-        //StartCoroutine(FadeTo(material, 1, 0, 1.0f));            
+        foreach (Material material in materials)
+        {
+            StartCoroutine(FadeTo(material, 1, 0, 1.0f));
+        }
         while (fadingOut)
         {
             yield return null;
@@ -107,8 +116,10 @@ public class JesterMover : MonoBehaviour
         newTransform = new Vector3(newX * xMax + xOffset, transform.position.y, newZ * zMax - zOffset);
         transform.position = newTransform;
 
-
-        //StartCoroutine(FadeTo(material, 0, 1, 1.0f));
+        foreach (Material material in materials)
+        {
+            StartCoroutine(FadeTo(material, 0, 1, 1.0f));
+        }
         while (fadingIn)
         {
             yield return null;

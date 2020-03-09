@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TomatoPrompt
       objectReference: {fileID: 0}
+    - target: {fileID: 3899258109777068936, guid: 413a7106c83058a46a9139aa49c81438,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8570077214724859768, guid: 413a7106c83058a46a9139aa49c81438,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3337,6 +3342,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BananaPrompt
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899258109777068936, guid: 413a7106c83058a46a9139aa49c81438,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4136154400983847962, guid: 413a7106c83058a46a9139aa49c81438,
         type: 3}

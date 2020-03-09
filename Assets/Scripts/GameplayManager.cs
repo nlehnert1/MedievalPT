@@ -29,30 +29,30 @@ public class GameplayManager : MonoBehaviour
         if(!BananaPrompt.activeInHierarchy && Jester.GetComponent<JesterMover>().shouldBeHitByBanana)
         {
             //TomatoPedestal.SetActive(true);
-            TomatoPrompt.SetActive(true);
-            foreach(GameObject banana in bananas) {
-                banana.SetActive(false);
-            }
-            foreach(GameObject tomato in tomatoes) {
-                tomato.SetActive(true);
-            }
-            Instantiate(tomato, TomatoPedestal.transform.position + new Vector3(0, 0.25f, 0), transform.rotation);
-            BananaPrompt.SetActive(false);
+            BananaPrompt.SetActive(true);
+            //foreach(GameObject banana in bananas) {
+                //banana.SetActive(false);
+           // }
+            //foreach(GameObject tomato in tomatoes) {
+                //tomato.SetActive(true);
+            //}
+            //Instantiate(tomato, TomatoPedestal.transform.position + new Vector3(0, 0.25f, 0), transform.rotation);
+            TomatoPrompt.SetActive(false);
             //BananaPedestal.SetActive(false);
             Jester.GetComponent<JesterMover>().hitByBanana = false;
         }
         if(!TomatoPrompt.activeInHierarchy && Jester.GetComponent<JesterMover>().shouldBeHitByTomato)
         {
-            foreach(GameObject banana in bananas) {
-                banana.SetActive(true);
-            }
-            foreach(GameObject tomato in tomatoes) {
-                tomato.SetActive(false);
-            }
+            //foreach(GameObject banana in bananas) {
+                //banana.SetActive(true);
+            //}
+            //foreach(GameObject tomato in tomatoes) {
+               // tomato.SetActive(false);
+            //}
             //BananaPedestal.SetActive(true);
-            BananaPrompt.SetActive(true);
-            TomatoPrompt.SetActive(false);
-            Instantiate(banana, BananaPedestal.transform.position + new Vector3(0, 0.25f, 0), transform.rotation);
+            TomatoPrompt.SetActive(true);
+            BananaPrompt.SetActive(false);
+            //Instantiate(banana, BananaPedestal.transform.position + new Vector3(0, 0.25f, 0), transform.rotation);
             //TomatoPedestal.SetActive(false);
             Jester.GetComponent<JesterMover>().hitByTomato = false;
         }
