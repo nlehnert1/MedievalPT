@@ -3353,6 +3353,11 @@ PrefabInstance:
       propertyPath: m_FontData.m_MaxSize
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 4136154400983847962, guid: 413a7106c83058a46a9139aa49c81438,
+        type: 3}
+      propertyPath: m_Text
+      value: Man, I really hate bananas!
+      objectReference: {fileID: 0}
     - target: {fileID: 8570077214724859768, guid: 413a7106c83058a46a9139aa49c81438,
         type: 3}
       propertyPath: m_LocalPosition.x
