@@ -18,6 +18,8 @@ public class JesterMover : MonoBehaviour
     public AudioClip splatSound;
     public bool hitByBanana;
     public bool hitByTomato;
+    public bool shouldBeHitByTomato;
+    public bool shouldBeHitByBanana;
 
     private void Start()
     {
@@ -27,7 +29,8 @@ public class JesterMover : MonoBehaviour
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
         material = meshRenderer.material;
         audio = GetComponent<AudioSource>();
-
+        shouldBeHitByTomato = true;
+        shouldBeHitByBanana = false;
     }
 
 
@@ -36,12 +39,16 @@ public class JesterMover : MonoBehaviour
         Debug.Log("Touched OnTriggerEnter");
         hitByTomato = other.gameObject.tag.Equals("tomato");
         hitByBanana = other.gameObject.tag.Equals("banana");
+        var goodCollision = (hitByTomato && shouldBeHitByTomato) || (hitByBanana && shouldBeHitByBanana);
         if (hitByTomato || hitByBanana)
         {
             //TODO: Spawn food particles
             audio.PlayOneShot(splatSound);
-            StartCoroutine(TeleportToNewLocation());
             Destroy(other.gameObject);
+            if(goodCollision)
+            {
+                StartCoroutine(TeleportToNewLocation());
+            }
         }
     }
 
@@ -84,10 +91,21 @@ public class JesterMover : MonoBehaviour
             yield return null;
         }
 
-            float newX = float.Parse(random.NextDouble().ToString());
-            float newZ = float.Parse(random.NextDouble().ToString());
-            newTransform = new Vector3(newX * xMax + xOffset, transform.position.y, newZ * zMax - zOffset);
-            transform.position = newTransform;
+        int randVal = random.Next(0, 2);
+        if(randVal == 0)
+        {
+            shouldBeHitByTomato = true;
+            shouldBeHitByBanana = false;
+        }
+        else
+        {
+            shouldBeHitByBanana = true;
+            shouldBeHitByTomato = false;
+        }
+        float newX = float.Parse(random.NextDouble().ToString());
+        float newZ = float.Parse(random.NextDouble().ToString());
+        newTransform = new Vector3(newX * xMax + xOffset, transform.position.y, newZ * zMax - zOffset);
+        transform.position = newTransform;
 
 
         //StartCoroutine(FadeTo(material, 0, 1, 1.0f));

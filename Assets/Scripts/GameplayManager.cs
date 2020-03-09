@@ -9,14 +9,16 @@ public class GameplayManager : MonoBehaviour
     public GameObject Jester;
     public GameObject tomato;
     public GameObject banana;
+    public GameObject BananaPrompt;
+    public GameObject TomatoPrompt;
 
     // Start is called before the first frame update
     void Start()
     {
         BananaPedestal.SetActive(true);
         TomatoPedestal.SetActive(true);
-        //Instantiate(BananaPedestal);
-        //Instantiate(TomatoPedestal);
+        BananaPrompt.SetActive(false);
+        TomatoPrompt.SetActive(true);
     }
 
     // Update is called once per frame
@@ -24,10 +26,10 @@ public class GameplayManager : MonoBehaviour
     {
         GameObject[] tomatoes = GameObject.FindGameObjectsWithTag("tomato");
         GameObject[] bananas = GameObject.FindGameObjectsWithTag("banana");
-        if(Jester.GetComponent<JesterMover>().hitByBanana)
+        if(!BananaPrompt.activeInHierarchy && Jester.GetComponent<JesterMover>().shouldBeHitByBanana)
         {
-            //Instantiate(TomatoPedestal);
-            TomatoPedestal.SetActive(true);
+            //TomatoPedestal.SetActive(true);
+            TomatoPrompt.SetActive(true);
             foreach(GameObject banana in bananas) {
                 banana.SetActive(false);
             }
@@ -35,11 +37,11 @@ public class GameplayManager : MonoBehaviour
                 tomato.SetActive(true);
             }
             Instantiate(tomato, TomatoPedestal.transform.position + new Vector3(0, 0.25f, 0), transform.rotation);
-            //Destroy(BananaPedestal);
-            BananaPedestal.SetActive(false);
+            BananaPrompt.SetActive(false);
+            //BananaPedestal.SetActive(false);
             Jester.GetComponent<JesterMover>().hitByBanana = false;
         }
-        if(Jester.GetComponent<JesterMover>().hitByTomato)
+        if(!TomatoPrompt.activeInHierarchy && Jester.GetComponent<JesterMover>().shouldBeHitByTomato)
         {
             foreach(GameObject banana in bananas) {
                 banana.SetActive(true);
@@ -47,11 +49,11 @@ public class GameplayManager : MonoBehaviour
             foreach(GameObject tomato in tomatoes) {
                 tomato.SetActive(false);
             }
-            //Instantiate(BananaPedestal);
-            BananaPedestal.SetActive(true);
+            //BananaPedestal.SetActive(true);
+            BananaPrompt.SetActive(true);
+            TomatoPrompt.SetActive(false);
             Instantiate(banana, BananaPedestal.transform.position + new Vector3(0, 0.25f, 0), transform.rotation);
-            //Destroy(TomatoPedestal);
-            TomatoPedestal.SetActive(false);
+            //TomatoPedestal.SetActive(false);
             Jester.GetComponent<JesterMover>().hitByTomato = false;
         }
     }
