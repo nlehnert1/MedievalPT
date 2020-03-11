@@ -2008,6 +2008,9 @@ MonoBehaviour:
   zOffset: 5
   xOffset: 2
   splatSound: {fileID: 8300000, guid: c784c287432d4a345bd9b3c53a353245, type: 3}
+  sadSound: {fileID: 8300000, guid: f60e295be032d7345b3b9d4a0f711d15, type: 3}
+  tauntSound: {fileID: 8300000, guid: 79aa528ea78fd4f49b15a655d02a5e95, type: 3}
+  laughSound: {fileID: 8300000, guid: 784722592429ae043b80c05e1a86d2ba, type: 3}
   hitByBanana: 0
   hitByTomato: 0
   shouldBeHitByTomato: 0

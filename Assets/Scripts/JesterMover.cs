@@ -16,6 +16,9 @@ public class JesterMover : MonoBehaviour
     bool fadingOut;
     AudioSource audio;
     public AudioClip splatSound;
+    public AudioClip sadSound;
+    public AudioClip tauntSound;
+    public AudioClip laughSound;
     public bool hitByBanana;
     public bool hitByTomato;
     public bool shouldBeHitByTomato;
@@ -37,6 +40,7 @@ public class JesterMover : MonoBehaviour
         audio = GetComponent<AudioSource>();
         shouldBeHitByTomato = true;
         shouldBeHitByBanana = false;
+        audio.PlayOneShot(tauntSound);
     }
 
 
@@ -101,6 +105,23 @@ public class JesterMover : MonoBehaviour
         }
 
         int randVal = random.Next(0, 2);
+        int soundVal = random.Next(0, 4);
+        if(soundVal < 1)
+        {
+            int whichSound = random.Next(0, 3);
+            switch(whichSound)
+            {
+                case 0:
+                    audio.PlayOneShot(tauntSound);
+                    break;
+                case 1:
+                    audio.PlayOneShot(sadSound);
+                    break;
+                case 2:
+                    audio.PlayOneShot(laughSound);
+                    break;
+            }
+        }
         if(randVal == 0)
         {
             shouldBeHitByTomato = true;
