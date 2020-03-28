@@ -63,7 +63,7 @@ public class JesterMover : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Makes a material change its opacity over the course of `duration` seconds. The material must have its rendering mode set to transparent for this to work.
     /// </summary>
     /// <param name="targetMaterial"></param>
     /// <param name="startingOpacity"></param>
