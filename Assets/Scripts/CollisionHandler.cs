@@ -17,5 +17,9 @@ public class CollisionHandler : MonoBehaviour
             Debug.Log(gameObject.GetComponentInChildren<MeshCollider>());
             Physics.IgnoreCollision(collision.collider, gameObject.GetComponentInChildren<MeshCollider>());
         }
+        else if(collision.gameObject.tag == "ground")
+        {
+            Destroy(this.gameObject, 2);
+        }
     }
 }

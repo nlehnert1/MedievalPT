@@ -5,9 +5,8 @@ using System;
 
 public class JesterMover : MonoBehaviour
 {
-    public int test;
-    public float zMax = 4.0f, xMax = 3.0f;
-    public float zOffset = 2, xOffset = 7;
+    public float zMax = 2.0f, xMax = 1.5f;
+    public float zOffset = 1.0f, xOffset = 3.5f;
     private System.Random random;
     private Transform GOTransform;
     MeshRenderer[] meshRenderers;
@@ -19,6 +18,7 @@ public class JesterMover : MonoBehaviour
     public AudioClip sadSound;
     public AudioClip tauntSound;
     public AudioClip laughSound;
+    // public AudioClip mismatchSound       TODO: have allison record something like "jokes on you I love these" or something to play when hit by wrong type of fruit.
     public bool hitByBanana;
     public bool hitByTomato;
     public bool shouldBeHitByTomato;
@@ -58,6 +58,10 @@ public class JesterMover : MonoBehaviour
             if(goodCollision)
             {
                 StartCoroutine(TeleportToNewLocation());
+            }
+            else
+            {
+                //audio.PlayOneShot(mismatchSound);
             }
         }
     }
@@ -147,4 +151,41 @@ public class JesterMover : MonoBehaviour
         }
         yield return new WaitForSeconds(1.5f);
     }
+
+    IEnumerator TeleportTargetToNewLocation()
+    {
+        Debug.Log("zmax: " + zMax + ", xmax: " + xMax + ", zOffset: " + zOffset + ", xOffset: " + xOffset);
+        Vector3 newTransform = new Vector3();
+        yield return new WaitForSeconds(1.0f);
+        foreach (Material material in materials)
+        {
+            StartCoroutine(FadeTo(material, 1, 0, 1.0f));
+        }
+        while (fadingOut)
+        {
+            yield return null;
+        }
+        
+        float newX = float.Parse(random.NextDouble().ToString());
+        float newZ = float.Parse(random.NextDouble().ToString());
+        newTransform = new Vector3(newX * xMax + xOffset, transform.position.y, newZ * zMax - zOffset);
+        transform.position = newTransform;
+
+        foreach (Material material in materials)
+        {
+            StartCoroutine(FadeTo(material, 0, 1, 1.0f));
+        }
+        while (fadingIn)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(1.5f);
+    }
+
+    private void ApplyDamage()
+    {
+        StartCoroutine(TeleportTargetToNewLocation());
+    }
+
+
 }
