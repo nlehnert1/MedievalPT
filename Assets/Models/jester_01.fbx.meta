@@ -3,7 +3,27 @@ guid: 183d880265bd1ec498e1c80b5e0ba219
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: decorGold
+    second: {fileID: 2100000, guid: f8f76c11a743d7c48928509151e2b36c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 210db97cb9d9abc4a99f3758395c85cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tunicBlack
+    second: {fileID: 2100000, guid: e5ed2d9437bad1741af4eaa97862ef39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tunicRed
+    second: {fileID: 2100000, guid: 12ea9dfeef23b5b4d941fec5121fc9f1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
