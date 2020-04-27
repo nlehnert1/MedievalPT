@@ -18,7 +18,8 @@ public class JesterMover : MonoBehaviour
     public AudioClip sadSound;
     public AudioClip tauntSound;
     public AudioClip laughSound;
-    // public AudioClip mismatchSound       TODO: have allison record something like "jokes on you I love these" or something to play when hit by wrong type of fruit.
+    public AudioClip mismatchSound;
+    public AudioClip mismatchSound2;
     public bool hitByBanana;
     public bool hitByTomato;
     public bool shouldBeHitByTomato;
@@ -61,7 +62,17 @@ public class JesterMover : MonoBehaviour
             }
             else
             {
-                //audio.PlayOneShot(mismatchSound);
+                //flip a coin to see which audio clip for mismatches to play.
+                int randVal = random.Next(0, 2);
+                switch(randVal % 2)
+                {
+                    case 0:
+                        audio.PlayOneShot(mismatchSound);
+                        break;
+                    case 1:
+                        audio.PlayOneShot(mismatchSound2);
+                        break;
+                }
             }
         }
     }
@@ -109,6 +120,8 @@ public class JesterMover : MonoBehaviour
         }
 
         int randVal = random.Next(0, 2);
+
+        //25% chance to say a voice line when hit
         int soundVal = random.Next(0, 4);
         if(soundVal < 1)
         {
