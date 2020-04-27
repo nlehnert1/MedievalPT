@@ -164,41 +164,4 @@ public class JesterMover : MonoBehaviour
         }
         yield return new WaitForSeconds(1.5f);
     }
-
-    IEnumerator TeleportTargetToNewLocation()
-    {
-        Debug.Log("zmax: " + zMax + ", xmax: " + xMax + ", zOffset: " + zOffset + ", xOffset: " + xOffset);
-        Vector3 newTransform = new Vector3();
-        yield return new WaitForSeconds(1.0f);
-        foreach (Material material in materials)
-        {
-            StartCoroutine(FadeTo(material, 1, 0, 1.0f));
-        }
-        while (fadingOut)
-        {
-            yield return null;
-        }
-        
-        float newX = float.Parse(random.NextDouble().ToString());
-        float newZ = float.Parse(random.NextDouble().ToString());
-        newTransform = new Vector3(newX * xMax + xOffset, transform.position.y, newZ * zMax - zOffset);
-        transform.position = newTransform;
-
-        foreach (Material material in materials)
-        {
-            StartCoroutine(FadeTo(material, 0, 1, 1.0f));
-        }
-        while (fadingIn)
-        {
-            yield return null;
-        }
-        yield return new WaitForSeconds(1.5f);
-    }
-
-    private void ApplyDamage()
-    {
-        StartCoroutine(TeleportTargetToNewLocation());
-    }
-
-
 }

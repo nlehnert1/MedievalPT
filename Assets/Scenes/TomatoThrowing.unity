@@ -10942,23 +10942,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2043052509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecaac49181c41ee4c80a746ff86ab767, type: 3}
+  m_Script: {fileID: 11500000, guid: 0634f6afdfe6f5c4f85bbc4de41ff038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   zMax: 2
   xMax: 1.5
   zOffset: 1
   xOffset: 3.5
-  splatSound: {fileID: 0}
-  sadSound: {fileID: 0}
-  tauntSound: {fileID: 0}
-  laughSound: {fileID: 0}
-  mismatchSound: {fileID: 0}
-  mismatchSound2: {fileID: 0}
-  hitByBanana: 0
-  hitByTomato: 0
-  shouldBeHitByTomato: 0
-  shouldBeHitByBanana: 0
+  Center: {fileID: 62608236}
 --- !u!1 &2087557780
 GameObject:
   m_ObjectHideFlags: 0
