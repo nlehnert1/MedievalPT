@@ -38,10 +38,15 @@ public class JesterMover : MonoBehaviour
             materials[i] = renderer.material;
             i++;
         }
+
+
         audio = GetComponent<AudioSource>();
         shouldBeHitByTomato = true;
         shouldBeHitByBanana = false;
+        audio.volume = 0.01f;
         audio.PlayOneShot(tauntSound);
+
+        
     }
 
 
