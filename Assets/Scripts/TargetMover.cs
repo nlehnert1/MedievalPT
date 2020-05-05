@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TargetMover : MonoBehaviour
 {
-    public float zMax = 2.0f, xMax = 1.5f;
-    public float zOffset = 1.0f, xOffset = 3.5f;
+    //Range for this one should be lots of z, moderate amount of x
+    int maxZ = 7, maxX = 3;
     private System.Random random;
     public Transform Center;
     MeshRenderer[] meshRenderers;
@@ -29,7 +29,6 @@ public class TargetMover : MonoBehaviour
     }
     IEnumerator TeleportTargetToNewLocation()
     {
-        Debug.Log("zmax: " + zMax + ", xmax: " + xMax + ", zOffset: " + zOffset + ", xOffset: " + xOffset);
         Vector3 newTransform = new Vector3();
         yield return new WaitForSeconds(1.0f);
         foreach (Material material in materials)
@@ -41,9 +40,19 @@ public class TargetMover : MonoBehaviour
             yield return null;
         }
 
+        int posX = random.Next(0, 2);
+        int posZ = random.Next(0, 2);
+        if(posX == 0)
+        {
+            posX = -1;
+        }
+        if(posZ == 0)
+        {
+            posZ = -1;
+        }
         float newX = float.Parse(random.NextDouble().ToString());
         float newZ = float.Parse(random.NextDouble().ToString());
-        newTransform = new Vector3(newX * (xMax + xOffset), transform.position.y, newZ * zMax - zOffset);
+        newTransform = new Vector3(Center.position.x + (posX * newX * maxX), Center.position.y, Center.position.z + (posZ * newZ * maxZ));
         transform.position = newTransform;
 
         foreach (Material material in materials)
